@@ -11,6 +11,8 @@ namespace FirstProject
         static void Main(string[] args)
         {
             Console.WriteLine($"\n\nПривет, мир!\nСегодня {DateTime.Now:G}");
+            double r = 100d;
+            Console.WriteLine($"r = {r:f3}");
         }
     }
 }
