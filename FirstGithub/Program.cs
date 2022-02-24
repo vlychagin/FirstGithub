@@ -10,6 +10,9 @@ namespace FirstGithub
     {
         static void Main(string[] args)
         {
+            // это ветвь branch1
+            Console.Title = "Пример проекта";
+
             Console.WriteLine($"\n\nПривет, мир!\nСегодня {DateTime.Now:G}");
             double r = 100d;
             double area = Math.PI * r*r;
