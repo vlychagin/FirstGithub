@@ -12,11 +12,8 @@ namespace FirstGithub
         {
             Console.WriteLine($"\n\nПривет, мир!\nСегодня {DateTime.Now:G}");
             double r = 100d;
-            Console.WriteLine($"r = {r:f3}");
-			r = r/2d;
-			Console.WriteLine($"r = {r:f3}");
-            r *= r;
-			Console.WriteLine($"r = {r:f3}");
+            double area = Math.PI * r*r;
+			Console.WriteLine($"r = {r:f3} ед., area = {area:f3} кв.ед.");
         }
     }
 }
