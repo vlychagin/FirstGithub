@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5D9304D9-69BA-488C-B5BA-F12A4DF28A44}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>FirstProject</RootNamespace>
-    <AssemblyName>FirstProject</AssemblyName>
+    <RootNamespace>FirstGithub</RootNamespace>
+    <AssemblyName>FirstGithub</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

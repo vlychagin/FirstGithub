@@ -15,6 +15,8 @@ namespace FirstGithub
             Console.WriteLine($"r = {r:f3}");
 			r = r/2d;
 			Console.WriteLine($"r = {r:f3}");
+            r *= r;
+			Console.WriteLine($"r = {r:f3}");
         }
     }
 }
