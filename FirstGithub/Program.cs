@@ -10,6 +10,7 @@ namespace FirstGithub
     {
         static void Main(string[] args)
         {
+            // ветвь master
             Console.WriteLine($"\n\nПривет, мир!\nСегодня {DateTime.Now:G}");
             double r = 100d;
             double area = Math.PI * r*r;
