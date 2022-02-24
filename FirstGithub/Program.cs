@@ -13,7 +13,7 @@ namespace FirstGithub
             Console.WriteLine($"\n\nПривет, мир!\nСегодня {DateTime.Now:G}");
             double r = 100d;
             Console.WriteLine($"r = {r:f3}");
-			r = r/d2;
+			r = r/2d;
 			Console.WriteLine($"r = {r:f3}");
         }
     }
