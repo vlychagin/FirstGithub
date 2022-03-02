@@ -11,9 +11,12 @@ namespace FirstGithub
         static void Main(string[] args)
         {
             // ветвь master
+            Console.Title = "Пример проекта";
+            
             Console.WriteLine($"\n\nПривет, мир!\nСегодня {DateTime.Now:G}");
             double r = 100d;
             double area = Math.PI * r*r;
+
 			Console.WriteLine($"r = {r:f3} ед., area = {area:f3} кв.ед.");
         }
     }
