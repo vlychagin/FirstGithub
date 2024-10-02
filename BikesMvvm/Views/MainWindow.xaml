@@ -1,0 +1,140 @@
+﻿<Window x:Class="BikesMvvm.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BikesMvvm"
+        mc:Ignorable="d"
+
+        Title="Практика MVVM, многопоточность, библиотека класса"
+        WindowStartupLocation="CenterScreen"
+        MinHeight="450" 
+        MinWidth="800"
+        
+        FontFamily="Verdana"
+        FontSize="16">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <!-- меню -->
+            <RowDefinition Height="28"/>
+
+            <!-- панель инструментов -->
+            <RowDefinition Height="40"/>
+
+            <!-- рабочая область -->
+            <RowDefinition Height="*"/>
+
+            <!-- строка состояния -->
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0"
+              FontSize="16"
+              Padding="6 2"
+              FontFamily="Verdana">
+    
+            <MenuItem Header="_Файл">
+                <MenuItem Header="Вы_ход"
+                          Command="{Binding ExitCommand}"/>
+            </MenuItem>
+            <MenuItem Header="_Справка">
+                <MenuItem Header="О пр_ограмме..."
+                          Command="{Binding AboutCommand}"/>
+            </MenuItem>
+        </Menu>
+
+        <ToolBarTray Grid.Row="1">
+            <ToolBar Padding="6 2">
+                <Button Padding="5 3"
+                        ToolTip="1-я обработка в потоке UI"
+                        Command="{Binding Proc1Command}">
+                    1
+                </Button>
+                <Button Padding="5 3"
+                        ToolTip="3-я обработка в потоке UI"
+                        Command="{Binding Proc2Command}">
+                    2
+                </Button>
+                <Button Padding="5 3"
+                        ToolTip="3-я обработка в потоке UI"
+                        Command="{Binding Proc3Command}">
+                    3
+                </Button>
+
+                <Separator Padding="6 0"/>
+
+                <Button Padding="5 3"
+                        ToolTip="1-я обработка в отдельном потоке"
+                        Command="{Binding Thread1Command}">
+                    1П
+                </Button>
+                <Button Padding="5 3"
+                        ToolTip="3-я обработка в отдельном потоке"
+                        Command="{Binding Thread2Command}">
+                    2П
+                </Button>
+                <Button Padding="5 3"
+                        ToolTip="3-я обработка в отдельном потоке"
+                        Command="{Binding Thread3Command}">
+                    3П
+                </Button>
+
+                <Button Padding="5 3"
+                        ToolTip="Все обработки в параллельных потоках"
+                        Command="{Binding ThreadAllCommand}">
+                    Все
+                </Button>
+
+                <Separator Padding="6 0"/>
+
+
+                <Button Padding="5 3"
+                        ToolTip="О программе"
+                        Command="{Binding AboutCommand}">
+                    ?
+                </Button>
+                
+                <Button Padding="5 3"
+                        ToolTip="Выход"
+                        Command="{Binding ExitCommand}">
+                    В
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
+
+        <GroupBox Grid.Row="2"
+                  Header=" Рабочая область "
+                  BorderThickness="1"
+                  BorderBrush="BlueViolet">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="40*"/>
+                    <ColumnDefinition Width="30*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0"
+                           Name="TblOut1">
+                    Первый вывод
+                </TextBlock>
+
+                <TextBlock Grid.Column="1"
+                           Name="TblOut2">
+                    Второй вывод
+                </TextBlock>
+
+                <TextBlock Grid.Column="2"
+                           Name="TblOut3">
+                    Третий вывод
+                </TextBlock>
+            </Grid>
+
+        </GroupBox>
+
+        <StatusBar Grid.Row="3">
+            <TextBlock Text="Готово" Padding="5 3"/>
+        </StatusBar>
+    </Grid>
+</Window>
